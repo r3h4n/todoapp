@@ -1,0 +1,23 @@
+<h1>This is the index.</h1>
+<p>
+  
+  <%= link_to "Create a new todo", new_todo_path %>
+  
+</p>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Edit</th>
+  </tr>
+    <td><% @todos.each do |todo| %></td>
+  <tr>
+    <td><%= todo.name%></td>
+    <td><%= todo.description%></td>
+    <td><%= link_to "Edit", edit_todo_path(todo) %></td>
+    <td><%= link_to "Show", todo_path(todo) %></td>
+
+  </tr>
+  <% end %>
+</table>
